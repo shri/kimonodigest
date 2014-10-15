@@ -328,3 +328,36 @@ function loadArticles(header, color, items)
     
 }
 
+// SEARCH
+
+//setup before functions
+var typingTimer;                //timer identifier
+var doneTypingInterval = 400;  //time in ms
+
+//on keyup, start the countdown
+$('.search').keyup(function(){
+    clearTimeout(typingTimer);
+    typingTimer = setTimeout(doneTyping, doneTypingInterval);
+});
+
+//on keydown, clear the countdown 
+$('.search').keydown(function(){
+    clearTimeout(typingTimer);
+});
+
+//user is "finished typing," do something
+function doneTyping () {
+    var text = $(".search").val();
+    if (text != undefined && text != "")
+    {
+        $(".search-result").remove();
+        $(".source:not(.search-result)").hide();
+        searchSources(text);
+    }
+    else
+    {
+        $(".search-result").remove();
+        $(".source").show();
+    }
+}
+

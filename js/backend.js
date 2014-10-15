@@ -94,7 +94,7 @@ function addSource(api, color, header, logo)
             className: "_User",
             objectId: json.objectId
         };
-        var acl = {};
+        var acl =  {"*":  { "read": true } };
         acl[json.objectId] =  { "read": true, "write": true};
         $.parse.post("sources", {
             api : api,
@@ -128,6 +128,20 @@ function loadSources()
                 $(".news-sources-scroll").append("<span class=\"source\" onclick=\"kimonoLoadArticles('" + source.header +"', '" + source.color + "', '" + source.api + "')\"><img class=\"sources-img\" src=\"" + source.logo + "\" /> <a class=\"source-link\" >" + source.header + "</a><a oid=\"" + source.objectId + "\" class=\"source-close\"></a></span>");
             }
         });
+    });
+}
+
+// Search Sources
+function searchSources(query)
+{
+    $.parse.get("sources", {"where": {"header":{"$regex":"\\Q" + query + "\\E", "$options":"i"}} }, function(json){
+        var results = json.results;
+        console.log(json);
+        for (var i = 0; i < results.length; i++)
+        {
+            var source = results[i];
+            $(".news-sources-scroll").append("<span class=\"source search-result\" onclick=\"kimonoLoadArticles('" + source.header +"', '" + source.color + "', '" + source.api + "')\"><img class=\"sources-img\" src=\"" + source.logo + "\" /> <a class=\"source-link\" >" + source.header + "</a><a class=\"source-add\" onclick=\"addSource('" + source.api +"', '" + source.color + "', '" + source.header + "', '" + source.logo + "')\"></a></span>");
+        }
     });
 }
 

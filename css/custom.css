@@ -180,7 +180,7 @@ a.login-link, a.add-source{
     padding-left: 10px;
     cursor: pointer;
 }
-a.source-close{
+a.source-close, a.source-add{
     color: #888;
     font-size: 14px;
     float: right;
@@ -191,8 +191,14 @@ a.source-close{
 a.source-close:hover{
     color: #d50000;
 }
+a.source-add:hover{
+    color: #428bca;
+}
 .source:hover a.source-close:before{
     content: "x";
+}
+.source:hover a.source-add:before{
+    content: "+";
 }
 div.embed img{
     width: 100%;
@@ -218,6 +224,13 @@ div.embed img{
 }
 .modal h4{
     font-family: "monaco", "Lucida Console", monospace;
+}
+input.search{
+    font-size: 14px;
+    width: 180px;
+    margin-left: 10px;
+    margin-bottom: 10px;
+    margin-right: 10px;
 }
 
 /*MEDIA QUERIES*/
