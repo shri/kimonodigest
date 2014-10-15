@@ -64,6 +64,7 @@ div.votes {
 p.lead{
     font-family: "monaco", "Lucida Console", monospace;
     font-size: 18px;
+    padding-top: 10px;
 }
 span.details{
     color: #cccccc;

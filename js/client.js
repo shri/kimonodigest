@@ -50,7 +50,7 @@ $("body").on("click", "div.article", function()
     $("div.summary").hide();
     if (article.hasClass("selected"))
     {
-        $(".article .selected").removeClass("selected");
+        article.removeClass("selected");
         return;
     }
     article.addClass("selected");
