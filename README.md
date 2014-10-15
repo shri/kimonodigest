@@ -25,6 +25,6 @@ Below is a list of feature ideas. As mentioned above, please feel free to send i
 
 ## Technology being used
 
-backend.js: Parse, jQuery
-index.html: Bootstrap 3, Material Design Theme
-client.js: jQuery
+* backend.js: Parse, jQuery
+* index.html: Bootstrap 3, Material Design Theme
+* client.js: jQuery
