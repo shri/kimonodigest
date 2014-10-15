@@ -137,10 +137,18 @@ function searchSources(query)
     $.parse.get("sources", {"where": {"header":{"$regex":"\\Q" + query + "\\E", "$options":"i"}} }, function(json){
         var results = json.results;
         console.log(json);
+        var apis = [];
         for (var i = 0; i < results.length; i++)
         {
             var source = results[i];
-            $(".news-sources-scroll").append("<span class=\"source search-result\" onclick=\"kimonoLoadArticles('" + source.header +"', '" + source.color + "', '" + source.api + "')\"><img class=\"sources-img\" src=\"" + source.logo + "\" /> <a class=\"source-link\" >" + source.header + "</a><a class=\"source-add\" onclick=\"addSource('" + source.api +"', '" + source.color + "', '" + source.header + "', '" + source.logo + "')\"></a></span>");
+            if ( $.inArray(source.api, apis) < 0 && i < 30 )
+            {
+                console.log(source.api);
+                console.log(apis);
+                apis.push(source.api);
+                $(".news-sources-scroll").append("<span class=\"source search-result\" onclick=\"kimonoLoadArticles('" + source.header +"', '" + source.color + "', '" + source.api + "')\"><img class=\"sources-img\" src=\"" + source.logo + "\" /> <a class=\"source-link\" >" + source.header + "</a><a class=\"source-add\" onclick=\"addSource('" + source.api +"', '" + source.color + "', '" + source.header + "', '" + source.logo + "')\"></a></span>");
+
+            }
         }
     });
 }

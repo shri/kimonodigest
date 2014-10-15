@@ -233,6 +233,7 @@ input.search{
     margin-right: 10px;
 }
 
+
 /*MEDIA QUERIES*/
 
 @media (max-width: 1200px){
@@ -241,6 +242,9 @@ input.search{
         height: 40px;
         display: inline;
         margin-top: 0px;
+    }
+    .github{
+        display: none;
     }
     div.news-sources, div.news-sources-scroll{
         height: 40px;
@@ -271,6 +275,9 @@ input.search{
         margin-top: 50px;
     }
     a.source-close{
+        display: none;
+    }
+    a.source-add{
         display: none;
     }
     div.article-container{

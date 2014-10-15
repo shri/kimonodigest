@@ -217,6 +217,7 @@ function kimonoLoadArticles(header, color, apiId)
     $.ajax({
         url:"https://www.kimonolabs.com/api/" + apiId + "?apikey=989877be85a3ca05477428c8b41d4fbe",
         success: function (response) {
+            console.log(response);
             loadArticles(header, color, response.results["collection1"]);
         },
         error: function (xhr, status) {
@@ -307,6 +308,11 @@ function loadArticles(header, color, items)
         {
             comments = '<i class="icon icon-material-forum"></i> ' + comments;
         }
+        var middot = "";
+        if (time!="" && author!="")
+        {
+            middot = ' &middot; ';
+        }
 
         articles += '<div class="row article">' +
            '<div class="col-md-1 col-sm-2 col-xs-2 votes">' +
@@ -314,7 +320,7 @@ function loadArticles(header, color, items)
             '</div>' +
             '<div class="col-md-10 col-sm-8 col-xs-8 article-title-container">' +
                 '<h2><a target="_blank" href="' + url + '"><span class="overflow-span">' + title + '</span></a></h2>' +
-                '<span class="details">' + time + ' &middot; ' + author + '</span>' +
+                '<span class="details">' + time + middot + author + '</span>' +
             '</div>' +
             '<div class="col-md-1 col-sm-2 col-xs-2">' +
                 '<a class="comments" target="_blank" href="' + comment_url + '">' + comments + '</a>' +
