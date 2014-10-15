@@ -2,7 +2,7 @@ Kimono Digest (kimdigest.com)
 ============
 ## Introduction
 
-This is an open source reader originally developed by Shri Ganeshram at [Kimono Labs](www.kimonolabs.com) and supported by Kimono Labs. 
+This is an open source reader originally developed by Shri Ganeshram at [Kimono Labs](www.kimonolabs.com) and supported by Kimono Labs. The reader takes as input specially structured Kimono Labs APIs
 
 This project is open to the community and will happily accept Pull Requests for additional features. If you're adding to the Parse Database, please let me know the schema, so that I can add it.
 
@@ -22,3 +22,9 @@ Below is a list of feature ideas. As mentioned above, please feel free to send i
 * User created summaries
 * Interactive Tutorial
 * Preloaded Summaries
+
+## Technology being used
+
+backend.js: Parse, jQuery
+index.html: Bootstrap 3, Material Design Theme
+client.js: jQuery
