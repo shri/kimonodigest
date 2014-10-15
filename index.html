@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, target-densitydpi=medium-dpi, user-scalable=0" />
+        <title>KimDigest</title>
+        <link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
+        <link href="bootstrap/css-compiled/ripples.css" rel="stylesheet">
+        <link href="bootstrap/css-compiled/material.css" rel="stylesheet">
+        <link href="bootstrap/icons/icons-material-design.css" rel="stylesheet">
+        <!-- STYLES -->
+        <link href="css/custom.css" rel="stylesheet">
+    </head>
+
+    <!-- BODY -->
+    <body>
+        <!-- LOGIN -->
+        <div class="modal" id="login">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                        <h4 class="modal-title">Login / Sign Up</h4>
+                        <div class="kimdigest-warning">KimDigest accounts and Kimono Labs accounts are separate from one another.</div>
+                    </div>
+                    <div class="modal-body">
+                        <div class="form-group">
+                            <div class="col-lg-12">
+                                <input type="email" class="form-control" id="inputEmail" placeholder="Email">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-lg-12">
+                                <input type="password" class="form-control" id="inputPassword" placeholder="Password">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal" id="loginButton">Login</button>
+                        <button type="button" class="btn btn-primary" data-dismiss="modal" id="signupButton">Sign Up</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ADD SOURCE -->
+        <div class="modal" id="addSource">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                        <h4 class="modal-title">Add New Source</h4>
+                    </div>
+                    <div class="modal-body">
+                        <div class="form-group">
+                            <div class="col-lg-12">
+                                <input type="text" class="form-control" id="inputHeader" placeholder="Source Name (e.g. Hacker News)">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-lg-12">
+                                <input type="text" class="form-control" id="inputLogo" placeholder="URL of Square Logo (e.g. http://i.imgur.com/2ZIO0eR.png)">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-lg-12">
+                                <input type="text" class="form-control" id="inputColor" placeholder="Color Hexcode (e.g. #F7F7F7)">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-lg-12">
+                                <input type="text" class="form-control" id="inputApi" placeholder="API ID (e.g. bsiqi5o0)">
+                            </div>
+                        </div>
+                        <div class="form-group form-button">
+                            <button type="button" class="btn btn-primary" data-dismiss="modal" id="addButton">Add Source</button>
+                        </div>
+                        <div class="bitcoin-instructions">
+                            <h4>Instructions</h4>
+                            <ol>
+                                <li>Install the <a target="_blank" href="https://www.kimonolabs.com/learn/chrome-extension">Kimono Labs Chrome Extension or Bookmarklet</a>.</li>
+                                <li>Visit any website to create a kimono API (something that changes often!)</li>
+                                <li>Make a selection for the article titles with property named <code>title</code>.</li>
+                                <li>Optionally make selections for the date submitted (named <code>submitted</code>), the author (<code>author</code>), the number of comments (<code>comments</code>), and finally the score or points (<code>points</code>) for each article.</li>
+                                <li><strong>Do not</strong> change the collection name (i.e. keep <code>collection1</code>)</li>
+                                <li>Choose an update frequency of every <code>15 minutes</code>.</li>
+                                <li>Create your API and copy the API ID (looks like <code>a1b2c33c</code>)</li>
+                                <li>Paste the API ID into to the form field above.</li>
+                                <li>Fill out the title of the source, the url of a square logo for it, and the hex color you'd like to use for the header, and you're done!</li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- NAV -->
+        <div class="news-sources">
+            <div class="news-sources-scroll">
+                <a class="login-link" >login / sign up to add</a>
+                <a class="add-source" style="display:none;">++ add source</a>
+                <span class="source selected" onclick="kimonoLoadArticles('HN Digest', '#ff6600', 'bsiqi5o0')"><img class="sources-img" src="http://www.ycombinator.com/images/ycombinator-logo-fb889e2e.png" /> <a class="source-link" >HN Digest</a></span>
+                <span class="source" onclick="kimonoLoadArticles('reddit digest','#cee3f8', '6kou6u36')"><img class="sources-img" src="http://cdn.appstorm.net/windows.appstorm.net/files/2012/10/Reddit-logo.jpg" /> <a class="source-link">reddit digest</a></span>
+                <span class="source" onclick="kimonoLoadArticles('reddit mixes', '#cee3f8', 'b9i4mvdm')"><img class="sources-img" src="http://i.imgur.com/2ZIO0eR.png" /> <a class="source-link">reddit mixes</a></span>
+            </div>
+        </div>
+        <!-- CONTENT -->
+        <div class="article-container">
+
+            <div class="page-header" id="banner">
+                <div class="row">
+                    <div class="col-lg-12 col-md-12 col-sm-12">
+                        <h1>
+                            <span class="kim-heading">HN Digest</span>
+                        </h1>
+                        <p class="lead">
+                            KimDigest: a reader that extracts and summarizes content from <a href="www.kimonolabs.com">Kimono</a> APIs
+                            <span class="social-icons">
+                                <a href="https://twitter.com/home?status=Check%20out%20@kimonolabs's%20new%20feed%20reader!%20kimdigest.com/" target="_blank"><i class="icon icon-material-post-twitter"></i></a>
+                                <a href="https://www.facebook.com/sharer/sharer.php?u=kimdigest.com" target="_blank"><i class="icon icon-material-post-facebook"></i></a>
+                            </span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="articles"></div>
+        </div>
+
+
+        <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+
+        <script src="bootstrap/scripts/ripples.js"></script>
+        <script src="bootstrap/scripts/material.js"></script>
+        <script src="bootstrap/scripts/jquery.parse.js"></script>
+        <script src="js/backend.js"></script>
+        <script src="js/client.js"></script>
+        <!-- Embedly script -->
+        <script src="http://cdn.embed.ly/jquery.embedly-3.1.1.min.js" type="text/javascript"></script>
+    </body>
+</html>
