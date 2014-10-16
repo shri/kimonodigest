@@ -102,7 +102,7 @@ $("body").on("click", "div.article", function()
     }
 
     // add loading image
-    article.find(".col-md-10").append('<img class="loading" src="imgs/ajax-loader.gif"/>');
+    article.find(".col-md-10").append('<img class="loading" src="http://i.imgur.com/Om6Jb2U.gif"/>');
 
     // handle reddit
     if (url.match(/(reddit.com)/i) != null)
@@ -213,7 +213,7 @@ kimonoLoadArticles("HN Digest", "#ff6600", "bsiqi5o0");
 
 function kimonoLoadArticles(header, color, apiId)
 {
-    $("div.articles").html('<img class="loading" src="imgs/ajax-loader.gif"/>');
+    $("div.articles").html('<img class="loading" src="http://i.imgur.com/Om6Jb2U.gif"/>');
     $.ajax({
         url:"https://www.kimonolabs.com/api/" + apiId + "?apikey=989877be85a3ca05477428c8b41d4fbe",
         success: function (response) {
