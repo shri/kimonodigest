@@ -20,12 +20,16 @@ Below is a list of feature ideas. As mentioned above, please feel free to send i
 * Twitter content handling
 * Better Summarization algorithm
 * Analysis of Sentiment, Semantics
-* Better Search of Sources
+* Better Search of Sources (use tags/topic)
 * Ability to search articles
 * Stats for content (points trend over time, etc)
 * User created summaries
 * Interactive Tutorial
 * Preloaded Summaries
+* Ability to drag and drop sources
+* Add Translation service
+* Create an App or other extension
+* Create notifications, live refresh (use Kimono's newdata feature)
 
 ## Technology being used
 
