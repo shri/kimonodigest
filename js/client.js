@@ -35,7 +35,7 @@ $("body").on("click", ".source", function(e){
     $(this).addClass("selected");
 });
 
-$("body").on("click", "div.article a", function(e)
+$("body").on("click", "div.article a.comments", function(e)
 {
     e.stopPropagation();
 });
@@ -309,9 +309,14 @@ function loadArticles(header, color, items)
             comments = '<i class="icon icon-material-forum"></i> ' + comments;
         }
         var middot = "";
+        var middot2 = "";
         if (time!="" && author!="")
         {
             middot = ' &middot; ';
+        }
+        if (time!="" || author!="")
+        {
+            middot2 = ' &middot; ';
         }
 
         articles += '<div class="row article">' +
@@ -320,7 +325,7 @@ function loadArticles(header, color, items)
             '</div>' +
             '<div class="col-md-10 col-sm-8 col-xs-8 article-title-container">' +
                 '<h2><a target="_blank" href="' + url + '"><span class="overflow-span">' + title + '</span></a></h2>' +
-                '<span class="details">' + time + middot + author + '</span>' +
+                '<a class="summary-link">summary</a><span class="details">' + middot2 + time + middot + author + '</span>' +
             '</div>' +
             '<div class="col-md-1 col-sm-2 col-xs-2">' +
                 '<a class="comments" target="_blank" href="' + comment_url + '">' + comments + '</a>' +
