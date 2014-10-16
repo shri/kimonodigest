@@ -21,20 +21,13 @@ Readers today require the legacy technology of RSS to operate--we'd like to make
 Below is a list of feature ideas. As mentioned above, please feel free to send in a PR to add. Also, if the feature will take substantial work, please let us know that you're working on it.
 
 * Themes (ability to add custom themes)
-* Twitter content handling
 * Better Summarization algorithm
-* Analysis of Sentiment, Semantics
 * Better Search of Sources (use tags/topic)
-* Ability to search articles
-* Stats for content (points trend over time, etc)
-* User created summaries
 * Interactive Tutorial
 * Preloaded Summaries
-* Ability to drag and drop sources
+* Ability to move around sources
 * Add Translation service
 * Create an App or other extension
-* Create notifications, live refresh (use Kimono's newdata feature)
-* Allow for greater customization of the feed.
 
 ## Technology being used
 
