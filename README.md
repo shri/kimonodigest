@@ -1,8 +1,12 @@
 Kimono Digest (kimdigest.com)
 ============
+## Win Bitcoin
+
+From now until the end of day, November 30th, win a Bitcoin from [Kimono Labs](www.kimonolabs.com) for making the most meaningful contribution(s) to the repo--all while feeling good, by helping create the world's most compatible reader.
+
 ## Introduction
 
-This is an open source reader originally developed by Shri Ganeshram at [Kimono Labs](www.kimonolabs.com) and supported by Kimono Labs. The reader takes as input specially structured Kimono Labs APIs
+This is an open source reader originally developed by Shri Ganeshram at [Kimono Labs](www.kimonolabs.com) and supported by Kimono Labs. The reader takes as input specially structured Kimono Labs APIs. 
 
 This project is open to the community and will happily accept Pull Requests for additional features. If you're adding to the Parse Database, please let me know the schema, so that I can add it.
 
